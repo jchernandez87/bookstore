@@ -1,15 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,600;0,700;0,800;1,100&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800&display=swap');
 
-
 .books {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #f5f6fa;
-  height: 100vh;
+  background-color: #fafafa;
   padding-top: 12px;
+  height: 100vh;
 }
 
 .container {
@@ -36,7 +35,7 @@
 .genre {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  color: #888888;
+  color: #888;
   font-size: 0.875rem;
 }
 
@@ -102,8 +101,8 @@
 }
 
 .ovalInfo span {
-  font-family: 'Montserrat',sans-serif;
-  color: #888888;
+  font-family: 'Montserrat', sans-serif;
+  color: #888;
   font-size: 0.875rem;
   opacity: 0.5;
 }
@@ -124,7 +123,7 @@
 .chapter span {
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 300;
-  color: #888888;
+  color: #888;
   font-size: 0.813rem;
   opacity: 0.5;
 }
@@ -149,4 +148,3 @@
   border-radius: 3px;
   background-color: #0290ff;
 }
-

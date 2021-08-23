@@ -1,5 +1,6 @@
 import React from 'react';
 import './Books.css';
+import AddBook from './AddBook';
 
 const Books = () => {
   const BooksInfo = [
@@ -60,6 +61,7 @@ const Books = () => {
           </div>
         </div>
       ))}
+      <AddBook className="addBook" />
     </div>
   );
 };

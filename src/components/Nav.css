@@ -29,12 +29,17 @@
   list-style-type: none;
 }
 
-.links li {
-  font-family: 'Montserrat',sans-serif;
+.link {
+  font-family: 'Montserrat', sans-serif;
   color: #9a9a9a;
   letter-spacing: 1.9px;
   margin-right: 2.5rem;
   font-size: 1rem;
+  text-decoration: none;
+}
+
+.active-link {
+  color: black;
 }
 
 .rightDiv {
