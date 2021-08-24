@@ -1,6 +1,6 @@
-import React from 'react';
 import './Books.css';
 import AddBook from './AddBook';
+import Book from './Book';
 
 const Books = () => {
   const BooksInfo = [
@@ -33,33 +33,14 @@ const Books = () => {
   return (
     <div className="books">
       {BooksInfo.map((book) => (
-        <div className="container" key={book.id}>
-          <div className="leftCont">
-            <span className="genre">{book.genre}</span>
-            <h2 className="bookName">{book.name}</h2>
-            <span className="author">{book.author}</span>
-            <div className="btns">
-              <button className="firstBtn" type="button">Comments</button>
-              <button type="button">Remove</button>
-              <button type="button">Edit</button>
-            </div>
-          </div>
-          <div className="rightCont">
-            <div className="circle">
-              <div className="oval" />
-              <div className="ovalInfo">
-                <h3 className="percentage">{`${book.percentage}%`}</h3>
-                <span>Completed</span>
-              </div>
-            </div>
-            <div className="line" />
-            <div className="chapter">
-              <span>CURRENT CHAPTER</span>
-              <h5 className="chapterName">{book.chapter}</h5>
-              <button type="button" className="updateBtn">UPDATE PROGRESS</button>
-            </div>
-          </div>
-        </div>
+        <Book
+          key={book.id}
+          genre={book.genre}
+          name={book.name}
+          author={book.author}
+          percentage={book.percentage}
+          chapter={book.chapter}
+        />
       ))}
       <AddBook className="addBook" />
     </div>
