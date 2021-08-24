@@ -1,0 +1,9 @@
+.books {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fafafa;
+  padding-top: 12px;
+  height: 100vh;
+}

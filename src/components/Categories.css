@@ -1,0 +1,11 @@
+.categoriesContainer {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoriesContainer p {
+  font-size: 45px;
+}
