@@ -1,14 +1,14 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import './Book.css';
+import PropTypes from 'prop-types';
 
 const Book = (props) => {
   const {
-    id, genre, name, author, percentage, chapter,
+    genre, name, author, percentage, chapter,
   } = props;
 
   return (
-    <div className="container" key={id}>
+    <div className="container">
       <div className="leftCont">
         <span className="genre">{genre}</span>
         <h2 className="bookName">{name}</h2>
@@ -44,6 +44,14 @@ const Book = (props) => {
       </div>
     </div>
   );
+};
+
+Book.propTypes = {
+  genre: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
+  chapter: PropTypes.string.isRequired,
 };
 
 export default Book;
