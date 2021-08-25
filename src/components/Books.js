@@ -1,40 +1,17 @@
 import './Books.css';
+import { useSelector } from 'react-redux';
 import AddBook from './AddBook';
 import Book from './Book';
 
 const Books = () => {
-  const BooksInfo = [
-    {
-      id: 1,
-      genre: 'Action',
-      name: 'The Hunger Games',
-      author: 'Suzanne Collins',
-      percentage: 64,
-      chapter: 'Chapter 17',
-    },
-    {
-      id: 2,
-      genre: 'Science Fiction',
-      name: 'Dune',
-      author: 'Frank Herbert',
-      percentage: 8,
-      chapter: 'Chapter 3:"A Lesson Learned"',
-    },
-    {
-      id: 3,
-      genre: 'Economy',
-      name: 'Capital in the Twenty-first Century',
-      author: 'Suzanne Collins',
-      percentage: 0,
-      chapter: 'Introduction',
-    },
-  ];
+  const BooksInfo = useSelector((store) => store.booksReducer);
 
   return (
     <div className="books">
       {BooksInfo.map((book) => (
         <Book
           key={book.id}
+          id={book.id}
           genre={book.genre}
           name={book.name}
           author={book.author}

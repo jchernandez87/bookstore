@@ -59,6 +59,10 @@
   padding-left: 0;
 }
 
+.remove {
+  cursor: pointer;
+}
+
 .rightCont {
   width: 50%;
   display: flex;
