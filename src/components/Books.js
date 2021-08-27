@@ -1,24 +1,36 @@
+import React, { useEffect } from 'react';
 import './Books.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import AddBook from './AddBook';
 import Book from './Book';
+import fetchBooks from '../redux/books/slice';
 
 const Books = () => {
-  const BooksInfo = useSelector((store) => store.booksReducer);
+  const bookStore = [];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, []);
+  const booksInfo = useSelector((store) => store.booksReducer.data);
+
+  const bookList = Object.keys(booksInfo);
+
+  bookList.forEach((id) => {
+    booksInfo[id].map((item) => (
+      bookStore.push(
+        <Book
+          key={id}
+          id={id}
+          category={item.category}
+          title={item.title}
+        />,
+      )));
+  });
 
   return (
     <div className="books">
-      {BooksInfo.map((book) => (
-        <Book
-          key={book.id}
-          id={book.id}
-          genre={book.genre}
-          name={book.name}
-          author={book.author}
-          percentage={book.percentage}
-          chapter={book.chapter}
-        />
-      ))}
+      { bookStore }
       <AddBook className="addBook" />
     </div>
   );
