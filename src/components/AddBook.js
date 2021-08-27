@@ -2,37 +2,38 @@ import React, { useState } from 'react';
 import uuid from 'react-uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
+import fetchBooks from '../redux/books/slice';
 import './AddBook.css';
 
 const AddBook = () => {
-  const [bookTitle, setBookTitle] = useState('');
-  const [bookCategory, setBookCategory] = useState('');
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
 
   const handleBookTitleChange = (e) => {
-    setBookTitle(e.target.value);
+    setTitle(e.target.value);
   };
 
   const handleCategoryChange = (e) => {
-    setBookCategory(e.target.value);
+    setCategory(e.target.value);
   };
 
   const dispatch = useDispatch();
 
-  const submitBook = (e) => {
+  const submitBook = async (e) => {
     e.preventDefault();
-
     const newBook = {
       id: uuid(),
-      genre: bookCategory,
-      name: bookTitle,
-      author: 'John Doe',
-      chapter: 'introduction',
-      percentage: 100,
+      title,
+      category,
     };
 
-    dispatch(addBook(newBook));
-    setBookCategory('');
-    setBookTitle('');
+    setCategory('');
+    setTitle('');
+
+    await dispatch(addBook(newBook));
+
+    await dispatch(fetchBooks());
+    document.location.reload();
   };
 
   return (
@@ -41,14 +42,14 @@ const AddBook = () => {
       <div className="formContainer">
         <form action="submit">
           <input
-            value={bookTitle}
+            value={title}
             className="bookTitle"
             name="bookTitle"
             type="text"
             placeholder="Book Title"
             onChange={handleBookTitleChange}
           />
-          <select value={bookCategory} onChange={handleCategoryChange} name="category" className="category">
+          <select value={category} onChange={handleCategoryChange} name="category" className="category">
             <option value="Economy">Category</option>
             <option value="Math">Math</option>
             <option value="Fantasy">Fantasy</option>
