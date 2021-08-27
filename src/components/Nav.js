@@ -18,14 +18,14 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="navBar">
-      <div className="leftDiv">
-        <h1 className="title">Bookstore CMS</h1>
-        <ul className="links">
-          {links.map((link) => <li key={link.id}><NavLink to={link.path} className="link" activeClassName="active-link" exact>{link.text}</NavLink></li>)}
+    <div className="navBar flex">
+      <div className="leftDiv flex">
+        <h1 className="title moontserrat">Bookstore CMS</h1>
+        <ul className="links flex">
+          {links.map((link) => <li key={link.id}><NavLink to={link.path} className="link montserrat" activeClassName="active-link" exact>{link.text}</NavLink></li>)}
         </ul>
       </div>
-      <div className="rightDiv">
+      <div className="rightDiv flex">
         <FaUser />
       </div>
     </div>
