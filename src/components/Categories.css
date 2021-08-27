@@ -1,4 +1,4 @@
-.categoriesContainer {
+.categoriesCont {
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -6,6 +6,6 @@
   align-items: center;
 }
 
-.categoriesContainer p {
+.categoriesCont p {
   font-size: 45px;
 }

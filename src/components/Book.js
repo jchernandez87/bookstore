@@ -16,32 +16,32 @@ const Book = (
   };
 
   return (
-    <div className="container">
-      <div className="leftCont">
-        <span className="genre">{category}</span>
-        <h2 className="bookName">{title}</h2>
-        <span className="author">John Doe</span>
+    <div className="container flex">
+      <div className="leftCont flex">
+        <span className="genre montserrat">{category}</span>
+        <h2 className="bookName robotoSlab">{title}</h2>
+        <span className="author robotoSlab">John Doe</span>
         <div className="btns">
-          <button className="firstBtn" type="button">
+          <button className="firstBtn robotoSlabLight" type="button">
             Comments
           </button>
-          <button className="remove" onClick={handleBookRemoval} type="button">Remove</button>
-          <button type="button">Edit</button>
+          <button className="remove robotoSlabLight" onClick={handleBookRemoval} type="button">Remove</button>
+          <button className="robotoSlabLight" type="button">Edit</button>
         </div>
       </div>
-      <div className="rightCont">
-        <div className="circle">
+      <div className="rightCont flex">
+        <div className="circle flex">
           <div className="oval" />
           <div className="ovalInfo">
-            <h3 className="percentage">100%</h3>
-            <span>Completed</span>
+            <h3 className="percentage montserrat">100%</h3>
+            <span className="montserrat">Completed</span>
           </div>
         </div>
         <div className="line" />
-        <div className="chapter">
+        <div className="chapter robotoSlabLight flex">
           <span>CURRENT CHAPTER</span>
-          <h5 className="chapterName">Introduction</h5>
-          <button type="button" className="updateBtn">
+          <h5 className="chapterName robotoSlabLight">Introduction</h5>
+          <button type="button" className="updateBtn robotoSlabLight">
             UPDATE PROGRESS
           </button>
         </div>
